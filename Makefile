@@ -1,4 +1,4 @@
-export ARCHS = armv7 armv7s arm64 arm64e
+export ARCHS = armv6 armv7 armv7s arm64 arm64e
 
 PREFIX=$(THEOS)/toolchain/Xcode.xctoolchain/usr/bin/
 
