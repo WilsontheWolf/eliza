@@ -1,0 +1,10 @@
+Package: com.wilsonthewolf.eliza
+Name: Eliza
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Make your battery colourful!
+Maintainer: WilsontheWolf
+Author: WilsontheWolf
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000)
+Depiction: https://wilsonthewolf.github.io/repo/depictions/web/?p=com.wilsonthewolf.eliza
