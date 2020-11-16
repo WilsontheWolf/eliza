@@ -9,8 +9,7 @@
 
 -(id)_batteryFillColor {
     float battery = self.chargePercent;
-    UIColor *newColor = [UIColor colorWithRed: (1 - battery) green: battery blue: 0 alpha: 1.00];
-    return newColor;
+    return [UIColor colorWithRed: (1 - battery) green: battery blue: 0 alpha: 1.00];
 };
 
 %end
