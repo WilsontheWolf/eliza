@@ -2,8 +2,8 @@
 
 @interface _UIBatteryView : UIView
   @property (assign,nonatomic) double chargePercent;
-  @property (nonatomic) long long chargingState;
-  @property (nonatomic) bool saverModeActive;
+  @property (assign,nonatomic) long long chargingState;
+  @property (assign,nonatomic) bool saverModeActive;
 @end
 
 %hook _UIBatteryView 
