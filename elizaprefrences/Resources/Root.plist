@@ -24,7 +24,7 @@
                 <key>key</key>
                 <string>enabled</string>
                 <key>PostNotification</key>
-                <string>batteryRefresh</string>
+                <string>com.wilsonthewolf.eliza/preferences.changed</string>
             </dict>
             <dict>
                 <key>cell</key>
@@ -43,6 +43,8 @@
                 <true/>
                 <key>key</key>
                 <string>lpm</string>
+                <key>PostNotification</key>
+                <string>com.wilsonthewolf.eliza/preferences.changed</string>
             </dict>
             <dict>
                 <key>cell</key>
@@ -61,6 +63,8 @@
                 <true/>
                 <key>key</key>
                 <string>charging</string>
+                <key>PostNotification</key>
+                <string>com.wilsonthewolf.eliza/preferences.changed</string>
             </dict>
             <dict>
                 <key>cell</key>
