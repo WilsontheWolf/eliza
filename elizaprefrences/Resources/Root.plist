@@ -30,6 +30,27 @@
                 <key>cell</key>
                 <string>PSGroupCell</string>
                 <key>footerText</key>
+                <string>When this is enabled, Eliza will color the iOS 14+ battery widget.
+Note: this option may be a little more finiky with enabling/disabling. A respring should ensure its correct.</string>
+            </dict>
+            <dict>
+                <key>cell</key>
+                <string>PSSwitchCell</string>
+                <key>label</key>
+                <string>Colour Battery Widget</string>
+                <key>defaults</key>
+                <string>com.wilsonthewolf.elizaprefrences</string>
+                <key>default</key>
+                <true/>
+                <key>key</key>
+                <string>ring</string>
+                <key>PostNotification</key>
+                <string>com.wilsonthewolf.eliza/preferences.changed</string>
+            </dict>
+            <dict>
+                <key>cell</key>
+                <string>PSGroupCell</string>
+                <key>footerText</key>
                 <string>When this is enabled Eliza will use its colours instead of the default low power mode colours.</string>
             </dict>
             <dict>

@@ -10,6 +10,7 @@ static NSString * nsNotificationString = @"com.wilsonthewolf.eliza/preferences.c
 static BOOL enabled;
 static BOOL lpm;
 static BOOL charging; 
+static BOOL ring;
 
 static void notificationCallback(CFNotificationCenterRef center, void *observer, CFStringRef name, const void *object, CFDictionaryRef userInfo) {
 	NSNumber * enabledValue = (NSNumber *)[[NSUserDefaults standardUserDefaults] objectForKey:@"enabled" inDomain:nsDomainString];
@@ -18,6 +19,8 @@ static void notificationCallback(CFNotificationCenterRef center, void *observer,
   lpm = (lpmValue)? [lpmValue boolValue] : YES;
   NSNumber * chargingValue = (NSNumber *)[[NSUserDefaults standardUserDefaults] objectForKey:@"charging" inDomain:nsDomainString];
   charging = (chargingValue)? [chargingValue boolValue] : YES;
+  NSNumber * ringValue = (NSNumber *)[[NSUserDefaults standardUserDefaults] objectForKey:@"ring" inDomain:nsDomainString];
+  ring = (ringValue)? [ringValue boolValue] : YES;
 }
 
 %ctor {
@@ -60,11 +63,13 @@ static void notificationCallback(CFNotificationCenterRef center, void *observer,
 
 %hook BCUIRingView
 
--(void)setStrokeColor:(id)arg1 {
+-(void)setStrokeColor:(UIColor *)arg1 {
   if(!enabled) return %orig;
+  if(!ring) return %orig;
 
-  float alpha = [arg1 alpha];
-  if(alpha != 1) return %orig;
+  double alpha;
+  [arg1 getRed:NULL green:NULL blue:NULL alpha:&alpha];
+  if(alpha != 1) return %orig; // This is the background grey ring
   
   BCUIChargeRing *ring = (BCUIChargeRing *)self.superview;
 
